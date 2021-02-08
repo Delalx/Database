@@ -1,0 +1,29 @@
+Dato: 8/2-21
+
+/* INSERT INTO queries, som gemmer 3 nye opskrifter i databasen */
+INSERT into Opskrifter (navn, fremgangsmaade)
+VALUES ('Pandekager','Mix dejen sammen og kom til på en pande og vend den'),
+       ('Kanelsnegle','Mix dejen sammen, kom lidt kanel på og rul den sammen'),
+       ('Pølsehorn', 'Mix dejen sammen, kom pølse på hver dej stykke og rul sammen');
+
+/* INSERT INTO queries, som gemmer 5 nye ingredienser i databasen */
+INSERT into Ingredienser (navn)
+VALUES ('Mel'), ('Egg'), ('Mælk'), ('Smør'), ('Kanel'), ('Pølse');
+
+/* 1 SELECT query, som viser indholdet af ingrediens-tabellen i ABC-rækkefølge */
+SELECT * FROM Ingredienser ORDER BY navn;
+
+/* 1 UPDATE query, som opdaterer navnet af en opskrift */
+UPDATE Opskrifter
+SET navn = 'Boller med Karry'
+WHERE id = 3;
+
+/* 1 DELETE query, som sletter en opskrift */
+DELETE FROM Opskrifter
+where ROWID = 2;
+
+/* 1 SELECT query, som viser indholdet af opskrifts-tabellen i ABC-rækkefølge */
+SELECT * FROM Opskrifter ORDER BY navn;
+
+/* 1 SELECT query, som viser indholdet af ingrediens-tabellen i faldende næringsindholds rækkefølge */
+SELECT * FROM Ingredienser ORDER BY kalorierpr100g desc;
